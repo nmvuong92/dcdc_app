@@ -230,7 +230,7 @@ class GioHang extends Component{
                                                 <TouchableOpacity onPress={()=>{
                                                     this.showEditSLSP(item);
                                                 }}>
-                                                        <Badge containerStyle={{ backgroundColor: 'violet'}}>
+                                                        <Badge containerStyle={{ backgroundColor: VCOLOR.xam}}>
                                                             <Text>{item.SLSP}</Text>
                                                         </Badge>
                                                 </TouchableOpacity>
@@ -283,7 +283,7 @@ class GioHang extends Component{
                         {
                             this.state.itemEdit!=null?
                             <View style={{flex:1,alignContent:"center",alignItems:"center"}}>
-                                <Text>{this.state.itemEdit.TenSanPham}</Text>
+                                <Text style={{fontSize:15}}>Nhập Số lượng</Text>
                                 <View style={styles2.counterStyle}>
                                         <Icon.Button 
                                         name="ios-remove" 
@@ -336,20 +336,20 @@ class GioHang extends Component{
                                         }}/>
                                     </View>
                                     <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-                                            <Ionicons.Button name="md-arrow-round-back" backgroundColor={VCOLOR.xam} borderRadius={0} onPress={()=>{
+                                            <Ionicons.Button name="md-arrow-round-back" backgroundColor={VCOLOR.gray} borderRadius={0} onPress={()=>{
                                                     this.refs.modal3.close();
                                             }}/>
                                             <MaterialIcons.Button name="delete-forever" backgroundColor={VCOLOR.red} borderRadius={0} onPress={()=>{
                                                     dispatch(cartCRUD("x",this.state.itemEdit,1));
                                                     this.refs.modal3.close();
                                             }}/>
-                                            <FontAwesome.Button name="check" backgroundColor={VCOLOR.green} borderRadius={0}  onPress={() => {
+                                            <FontAwesome.Button name="check" backgroundColor={VCOLOR.blue} borderRadius={0}  onPress={() => {
                                                 if(this.state.slspEdit!=NaN){
                                                     dispatch(cartCRUD("=",this.state.itemEdit,this.state.slspEdit));
                                                 }
                                                 this.refs.modal3.close();
                                             }}>
-                                                <Text style={{fontFamily: 'Arial', fontSize: 15}}>Cập nhật</Text>
+                                                <Text style={{fontFamily: 'Arial', fontSize: 15}}></Text>
                                             </FontAwesome.Button>
                                     </View>
                             </View>
@@ -396,10 +396,10 @@ const styles=StyleSheet.create({
     vInput:{
         height: 40,
         paddingLeft: 10,
-        flex: 1,
         fontSize: 16,
         borderBottomWidth:1,
         borderBottomColor: "gray",
+        width:80,
     },
     productItem:{
         borderWidth:1,
@@ -437,8 +437,8 @@ const styles=StyleSheet.create({
       },
     
       modal3: {
-        height: 300,
-        width: 300
+        height: 100,
+        width: 200
       },
     
       modal4: {
