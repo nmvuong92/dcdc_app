@@ -69,7 +69,7 @@ class Home extends Component{
         //dispatch(sanPhamTrangChuReducer());
 
         const {sanPhamTrangChuReducer,dispatch} = this.props; 
-        dispatch(fetchSanPhamTrangChu());
+       // dispatch(fetchSanPhamTrangChu());
     }
       
     _onChangeSearchText = (searchText) => {
@@ -90,11 +90,11 @@ class Home extends Component{
                 <HeadPadding/>
                 <ScrollView contentContainerStyle={styles.scroll_container}>
                             
-                            <Image style={{width:"100%",height:200}} source={require('./../assets/images/banner.jpg')}/>
+                            <Image style={{width:"100%"}} source={require('./../assets/images/banner.jpg')}/>
                         
                             <View style={styles.header_menu}>
                                 <View style={{flex:1}}>
-                                    <Image style={{width:80,height:50}} source={require('./../assets/images/logo.png')}/>
+                                   
                                 </View>
                                 <View style={{flex:3,flexDirection:'row',justifyContent:'flex-end'}}>
                                        
@@ -164,7 +164,7 @@ class Home extends Component{
                                                                     dispatch({type:"Home_ChitietSanPham_Screen",id:item.ID});
                                                                 }}>
                                                                     <View style={styles.product_item_body}>
-                                                                        <Image style={{width:100,height:100}} source={{uri:item.HinhAnh}}/>
+                                                                        <Image style={{width:170,height:100}} source={{uri:item.HinhAnh}}/>
                                                                     </View>
                                                                     <Text style={vStyles.product_name}>{item.TenSanPham} {item.New?<Text style={{color:"red",fontSize:9,fontWeight:'bold'}}>NEW</Text>:null}</Text>
                                                                     <Text style={vStyles.cat_name}>{item.TenDanhMuc}</Text>
@@ -212,7 +212,7 @@ class Home extends Component{
                                                     }}>
                                                        
                                                             <View style={styles.product_item_body}>
-                                                                <Image style={{width:100,height:100}} source={{uri:item.HinhAnh}}/>
+                                                                <Image style={{width:170,height:100}}  source={{uri:item.HinhAnh}}/>
                                                             </View>
                                                             <Text style={vStyles.cat_name}>{item.TenDanhMuc}</Text>
                                                             <Text style={vStyles.price}>{formatVND(item.Gia)}</Text>
@@ -341,6 +341,12 @@ const styles = StyleSheet.create({
        alignItems:'center',
        marginRight:10,
     },
+    itemImage:{
+        width: "95%",
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     panel:{
         marginBottom: 15,
         borderColor:VCOLOR.xam,
@@ -384,7 +390,7 @@ const styles = StyleSheet.create({
        color:'black'
     },
     product_item_body:{
-
+        position:"relative"
     },
     scroll_container:{
        

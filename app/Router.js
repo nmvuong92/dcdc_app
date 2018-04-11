@@ -40,7 +40,7 @@ import {isIphoneX} from './common/vUtils';
 import {getUser} from './common/Storage';
 import {initialSyncSetUser} from './actions/authAction';
 import {fetchDanhSachDonHang} from './actions/donHangAction';
-
+import {fetchSanPhamTrangChu} from './actions/sanPhamTrangChuAction';
 const opt_hide_tabbar={
     //tabBarVisible:false,
     header:null,
@@ -393,7 +393,7 @@ class MainScreenNavigatorState extends Component{
             dispatch({type:'KhuyenMaiScreen'});*/
             const {dispatch} = this.props;
             dispatch(cartCRUD("sync"));
-
+            dispatch(fetchSanPhamTrangChu());
             //login
             getUser().then((user)=>{
                 dispatch(initialSyncSetUser(user))

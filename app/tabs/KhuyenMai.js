@@ -18,7 +18,6 @@ class KhuyenMai extends Component{
         this.state={
             cart_nav:params.cart_nav,
             thanhtoan_nav:params.thanhtoan_nav,
-       
             appIsReady:false,
             showBtnTimKiem:false,
             data:[],
